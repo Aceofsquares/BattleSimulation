@@ -1,18 +1,25 @@
 package simulator.bs;
 
+import java.util.Scanner;
+
 public class BattleSimulatorMain {
+	
+	private static Scanner input;
+	
 	public static void main(String[] args) {
+		input = new Scanner(System.in);
 		//Name, Speed, phyDef, phyAtt, critChance, maxLife, isAlive
 		Human brian = new Human("Brian", 8, 17, 17, 4, 18, true);
-		Monster banshee = new Monster("Banshee", 3, 10, 5, 15, 15, true);
-		SimpleBattleSimulator simpBatSim = new SimpleBattleSimulator();
+		Monster banshee = new Monster("Banshee", 3, 10, 5, 35, 15, true);
+		BattleSimulator battleSim = new SimpleBattleSimulator(); //Change to your Subclassed simulator.
 		while(brian.isAlive() && banshee.isAlive()){
+			waitForEnter();
 			System.out.printf("\n--%s's turn!--\n", brian.getName());
-			simpBatSim.battle(brian, banshee);
+			battleSim.battle(brian, banshee);
 			printBattleInformation(banshee);
 			if(banshee.isAlive()){
 				System.out.printf("\n--%s's turn!--\n", banshee.getName());
-				simpBatSim.battle(banshee, brian);
+				battleSim.battle(banshee, brian);
 				printBattleInformation(brian);
 			}
 		}
@@ -23,6 +30,11 @@ public class BattleSimulatorMain {
 		if(!banshee.isAlive()){
 			System.out.printf("%s has died at the blade of %s", banshee.getName(), brian.getName());
 		}
+	}
+	
+	public static void waitForEnter(){
+		System.out.print("Press ENTER to continue...");
+		input.nextLine();
 	}
 	
 	public static void printBattleInformation(Character character){
