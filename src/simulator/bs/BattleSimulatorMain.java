@@ -7,19 +7,25 @@ public class BattleSimulatorMain {
 		Monster banshee = new Monster("Banshee", 3, 10, 5, 15, 15, true);
 		SimpleBattleSimulator simpBatSim = new SimpleBattleSimulator();
 		while(brian.isAlive() && banshee.isAlive()){
-			System.out.printf("--%s's turn!--\n", brian.getName());
+			System.out.printf("\n--%s's turn!--\n", brian.getName());
 			simpBatSim.battle(brian, banshee);
+			printBattleInformation(banshee);
 			if(banshee.isAlive()){
-				System.out.printf("--%s's turn!--\n", banshee.getName());
+				System.out.printf("\n--%s's turn!--\n", banshee.getName());
 				simpBatSim.battle(banshee, brian);
+				printBattleInformation(brian);
 			}
 		}
 		
 		if(!brian.isAlive()){
-			System.out.println("Brian died at the hooves of Monster Girl.");
+			System.out.printf("%s got eaten by %s.", brian.getName(), banshee.getName());
 		}
 		if(!banshee.isAlive()){
-			System.out.println("Banshee has died at the blade of Brian.");
+			System.out.printf("%s has died at the blade of %s", banshee.getName(), brian.getName());
 		}
+	}
+	
+	public static void printBattleInformation(Character character){
+		System.out.printf("%s health: %d\n", character.getName(), character.getLife());
 	}
 }

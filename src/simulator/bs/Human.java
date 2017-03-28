@@ -21,7 +21,7 @@ public class Human extends Character {
 
 	@Override
 	public void criticalHit() {
-		System.out.println("By the devine!!! I will smite you!!!");
+		System.out.println("By the divine!!! I will smite you!!!");
 	}
 
 	@Override

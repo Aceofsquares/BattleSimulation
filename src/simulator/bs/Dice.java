@@ -12,7 +12,9 @@ public class Dice extends Random {
 			throw new DiceMinMaxException("Minimum must be less than maximum: " + min + " > " + max);
 		}
 		rand = new Random();
-		return rand.nextInt((max - min) + 1) + min;
+		int number = rand.nextInt((max - min) + 1) + min;
+		System.out.printf("Rolled %d\n", number);
+		return number;
 	}
 	
 	/**
