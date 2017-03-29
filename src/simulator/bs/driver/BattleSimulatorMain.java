@@ -5,7 +5,7 @@ import java.util.Scanner;
 import simulator.bs.BattleSimulators.BattleSimulator;
 import simulator.bs.BattleSimulators.Dice;
 import simulator.bs.BattleSimulators.SimpleBattleSimulator;
-import simulator.bs.Characters.Character;
+import simulator.bs.Characters.GameCharacter;
 import simulator.bs.Characters.Human;
 import simulator.bs.Characters.Monster;
 import simulator.bs.Weapons.BroadSword;
@@ -21,12 +21,12 @@ public class BattleSimulatorMain {
 		int battle = 0;
 		// Name, Speed, phyDef, phyAtt, magDef, magAtt, critChance, maxLife,
 		// isAlive
-		Character brian = new Human("Brian");
+		GameCharacter brian = new Human("Brian");
 		rollCharacter(brian);
 		brian.equipWeapon(new BroadSword());
 		System.out.println(brian);
 
-		Character banshee;
+		GameCharacter banshee;
 		BattleSimulator battleSim = new SimpleBattleSimulator(); // Change to
 																	// your
 																	// Subclassed
@@ -62,7 +62,7 @@ public class BattleSimulatorMain {
 		}
 	}
 
-	public static void rollCharacter(Character ch) {
+	public static void rollCharacter(GameCharacter ch) {
 		Dice.debugInfo = false;
 		ch.setSpeed(Dice.roll(50));
 		ch.setCritChance(Dice.roll(50));
@@ -79,7 +79,7 @@ public class BattleSimulatorMain {
 		input.nextLine();
 	}
 
-	public static void printBattleInformation(Character character) {
+	public static void printBattleInformation(GameCharacter character) {
 		System.out.printf("%s health: %d\n", character.getName(), character.getLife());
 	}
 }

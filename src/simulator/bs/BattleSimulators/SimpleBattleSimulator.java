@@ -1,12 +1,12 @@
 package simulator.bs.BattleSimulators;
 
-import simulator.bs.Characters.Character;
+import simulator.bs.Characters.GameCharacter;
 import simulator.bs.Weapons.WeaponType;
 
 public class SimpleBattleSimulator extends BattleSimulator {
 
 	@Override
-	protected void rules(Character attacker, Character defender) {
+	protected void rules(GameCharacter attacker, GameCharacter defender) {
 		Dice.debugInfo = true;
 		if (attacker.getWeapon().getType() == WeaponType.PHYSICAL) {
 			physicalAttack(attacker, defender);
@@ -16,7 +16,7 @@ public class SimpleBattleSimulator extends BattleSimulator {
 	}
 	
 	//Similar to physical attack only we do not include the speed of the defender in their defense check. :O
-	private void magicalAttack(Character attacker, Character defender){
+	private void magicalAttack(GameCharacter attacker, GameCharacter defender){
 		System.out.printf("%s is rolling: ", attacker.getName());
 		int attackerHitCheck = Dice.roll(attacker.getMagicAtt()) + attacker.getSpeed();
 		System.out.printf("%s is rolling: ", defender.getName());
@@ -37,7 +37,7 @@ public class SimpleBattleSimulator extends BattleSimulator {
 		}
 	}
 
-	private void physicalAttack(Character attacker, Character defender) {
+	private void physicalAttack(GameCharacter attacker, GameCharacter defender) {
 		System.out.printf("%s is rolling: ", attacker.getName());
 		int attackerHitCheck = Dice.roll(attacker.getPhyAtt()) + attacker.getSpeed();
 		System.out.printf("%s is rolling: ", defender.getName());
