@@ -28,8 +28,9 @@ public class SimpleBattleSimulator extends BattleSimulator {
 			System.out.printf("Testing if crit. Must be <= %d\n", critCheck + attacker.getWeapon().getCritChance());
 			if (Dice.roll(100) <= attacker.getCritChance()) {
 				attacker.magAttack(defender, true);
+			}else {
+				attacker.magAttack(defender, false);
 			}
-			attacker.magAttack(defender, false);
 		} else {
 			System.out.printf("%s missed %s!\n", attacker.getName(), defender.getName());
 		}
@@ -48,8 +49,9 @@ public class SimpleBattleSimulator extends BattleSimulator {
 			System.out.printf("Testing if crit. Must be <= %d\n", critCheck + attacker.getWeapon().getCritChance());
 			if (Dice.roll(100) <= attacker.getCritChance()) {
 				attacker.phyAttack(defender, true);
+			} else {
+				attacker.phyAttack(defender, false);
 			}
-			attacker.phyAttack(defender, false);
 		} else {
 			System.out.printf("%s missed %s!\n", attacker.getName(), defender.getName());
 		}
