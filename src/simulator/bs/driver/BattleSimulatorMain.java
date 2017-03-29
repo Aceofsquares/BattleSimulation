@@ -19,18 +19,13 @@ public class BattleSimulatorMain {
 		input = new Scanner(System.in);
 		int round = 1;
 		int battle = 0;
-		// Name, Speed, phyDef, phyAtt, magDef, magAtt, critChance, maxLife,
-		// isAlive
 		GameCharacter brian = new Human("Brian");
 		rollCharacter(brian);
 		brian.equipWeapon(new BroadSword());
 		System.out.println(brian);
 
 		GameCharacter banshee;
-		BattleSimulator battleSim = new SimpleBattleSimulator(); // Change to
-																	// your
-																	// Subclassed
-																	// simulator.
+		BattleSimulator battleSim = new SimpleBattleSimulator();
 		while (brian.isAlive() && battle < 10) {
 			banshee = new Monster("Banshee");
 			rollCharacter(banshee);
