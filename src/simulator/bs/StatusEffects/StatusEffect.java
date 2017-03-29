@@ -29,5 +29,9 @@ public abstract class StatusEffect {
 	public StatusEffectTime getTime(){
 		return time;
 	}
+	
+	public void setEffectTime(StatusEffectTime time){
+		this.time = time;
+	}
 
 }
