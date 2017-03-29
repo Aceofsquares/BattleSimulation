@@ -2,7 +2,7 @@ package simulator.bs.Characters;
 
 import simulator.bs.Weapons.Weapon;
 
-public abstract class Character {
+public abstract class GameCharacter {
 	protected String name;
 	protected int speed;
 	protected int phyDef;
@@ -27,13 +27,13 @@ public abstract class Character {
 
 	public abstract void victory();
 
-	public Character(String name) {
+	public GameCharacter(String name) {
 		isAlive = true;
 		weapon = new Weapon();
 		this.name = name;
 	}
 
-	public Character(String name, int maxLife) {
+	public GameCharacter(String name, int maxLife) {
 		// ***Everything by default is 0, false, or null***//
 		isAlive = true;
 		life = maxLife;
@@ -42,7 +42,7 @@ public abstract class Character {
 		this.name = name;
 	}
 
-	public Character(String name, int speed, int phyDef, int phyAtt, int magDef, int magAtt, int critChance,
+	public GameCharacter(String name, int speed, int phyDef, int phyAtt, int magDef, int magAtt, int critChance,
 			int maxLife, boolean isAlive) {
 		weapon = new Weapon();
 		this.name = name;
@@ -82,7 +82,7 @@ public abstract class Character {
 		this.weapon = weapon;
 	}
 
-	public void phyAttack(Character attackedCharacter, boolean isCrit) {
+	public void phyAttack(GameCharacter attackedCharacter, boolean isCrit) {
 		double critModifier = isCrit ? 2.5 : 1;
 
 		int otherAttDef = attackedCharacter.getPhyDef();
@@ -90,7 +90,7 @@ public abstract class Character {
 		attackedCharacter.takeDamage(damage);
 	}
 
-	public void magAttack(Character attackedCharacter, boolean isCrit) {
+	public void magAttack(GameCharacter attackedCharacter, boolean isCrit) {
 		double critModifier = isCrit ? 2.5 : 1;
 
 		int otherMagDef = attackedCharacter.getMagicDef();

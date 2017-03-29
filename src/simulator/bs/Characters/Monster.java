@@ -1,6 +1,6 @@
 package simulator.bs.Characters;
 
-public class Monster extends Character {
+public class Monster extends GameCharacter {
 
 	public Monster(String name) {
 		super(name);
