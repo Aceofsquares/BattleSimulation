@@ -1,7 +1,7 @@
 package simulator.bs.BattleSimulators;
 
 import simulator.bs.Characters.GameCharacter;
-import simulator.bs.Weapons.WeaponType;
+import simulator.bs.InanimateObjects.WeaponType;
 
 public class SimpleBattleSimulator extends BattleSimulator {
 

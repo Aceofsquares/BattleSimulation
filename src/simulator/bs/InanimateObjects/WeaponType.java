@@ -1,4 +1,4 @@
-package simulator.bs.Weapons;
+package simulator.bs.InanimateObjects;
 
 public enum WeaponType {
 	PHYSICAL, MAGIC

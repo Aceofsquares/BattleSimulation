@@ -8,8 +8,8 @@ import simulator.bs.BattleSimulators.SimpleBattleSimulator;
 import simulator.bs.Characters.GameCharacter;
 import simulator.bs.Characters.Human;
 import simulator.bs.Characters.Monster;
-import simulator.bs.Weapons.BroadSword;
-import simulator.bs.Weapons.DarkSpell;
+import simulator.bs.InanimateObjects.Weapons.BroadSword;
+import simulator.bs.InanimateObjects.Weapons.DarkSpell;
 
 public class BattleSimulatorMain {
 

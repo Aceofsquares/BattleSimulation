@@ -1,6 +1,7 @@
 package simulator.bs.Characters;
 
-import simulator.bs.Weapons.Weapon;
+import simulator.bs.InanimateObjects.Weapon;
+import simulator.bs.InanimateObjects.Weapons.BareHands;
 
 public abstract class GameCharacter {
 	protected String name;
@@ -29,7 +30,7 @@ public abstract class GameCharacter {
 
 	public GameCharacter(String name) {
 		isAlive = true;
-		weapon = new Weapon();
+		weapon = new BareHands();
 		this.name = name;
 	}
 
@@ -37,14 +38,13 @@ public abstract class GameCharacter {
 		// ***Everything by default is 0, false, or null***//
 		isAlive = true;
 		life = maxLife;
-		weapon = new Weapon();
+		weapon = new BareHands();
 		this.maxLife = maxLife;
 		this.name = name;
 	}
 
-	public GameCharacter(String name, int speed, int phyDef, int phyAtt, int magDef, int magAtt, int critChance,
-			int maxLife, boolean isAlive) {
-		weapon = new Weapon();
+	public GameCharacter(String name, int speed, int phyDef, int phyAtt, int magDef, int magAtt, int critChance, int maxLife, boolean isAlive) {
+		weapon = new BareHands();
 		this.name = name;
 		this.speed = speed;
 		this.phyDef = phyDef;
@@ -84,7 +84,6 @@ public abstract class GameCharacter {
 
 	public void phyAttack(GameCharacter attackedCharacter, boolean isCrit) {
 		double critModifier = isCrit ? 2.5 : 1;
-
 		int otherAttDef = attackedCharacter.getPhyDef();
 		int damage = (int) ((phyAtt * critModifier) + weapon.getAttack()) - otherAttDef;
 		attackedCharacter.takeDamage(damage);
@@ -92,7 +91,6 @@ public abstract class GameCharacter {
 
 	public void magAttack(GameCharacter attackedCharacter, boolean isCrit) {
 		double critModifier = isCrit ? 2.5 : 1;
-
 		int otherMagDef = attackedCharacter.getMagicDef();
 		int damage = (int) ((magAtt + weapon.getAttack()) * critModifier) - otherMagDef;
 		attackedCharacter.takeDamage(damage);
@@ -172,34 +170,22 @@ public abstract class GameCharacter {
 
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(String.format("%-20s%-10s%-10s%-10s%-10s%-10s%-10s%-10s%s\n", "Name", "Life", "Phy Att", "Phy Def",
-				"Mag Def", "Mag Att", "Speed", "Crit", "Alive"));
+		sb.append(String.format("%-20s%-10s%-10s%-10s%-10s%-10s%-10s%-10s%s\n", "Name", "Life", "Phy Att", "Phy Def", "Mag Def", "Mag Att", "Speed", "Crit", "Alive"));
 		sb.append(String.format("%-20s", name));
-
 		sb.append(String.format("%-10s", "" + life));
-
 		sb.append(String.format("%-10s", "" + phyAtt));
-
 		sb.append(String.format("%-10s", "" + phyDef));
-
 		sb.append(String.format("%-10s", "" + magDef));
-
 		sb.append(String.format("%-10s", "" + magAtt));
-
 		sb.append(String.format("%-10s", "" + speed));
-
 		sb.append(String.format("%-10s", "" + critChance));
-
 		sb.append(isAlive);
-
 		sb.append("\n\n");
-
 		sb.append("----Weapon----");
 		sb.append("\n");
 		sb.append(weapon.toString());
 		sb.append("--------------");
 		sb.append("\n");
-
 		return sb.toString();
 	}
 }
