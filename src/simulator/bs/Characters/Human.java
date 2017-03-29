@@ -1,11 +1,17 @@
 package simulator.bs.Characters;
 
 public class Human extends Character {
+
+	public Human(String name) {
+		super(name);
+	}
+
 	public Human(String name, int maxLife) {
 		super(name, maxLife);
 	}
-	
-	public Human(String name, int speed, int phyDef, int phyAtt, int magDef, int magAtt, int critChance, int maxLife, boolean isAlive){
+
+	public Human(String name, int speed, int phyDef, int phyAtt, int magDef, int magAtt, int critChance, int maxLife,
+			boolean isAlive) {
 		super(name, speed, phyDef, phyAtt, magDef, magAtt, critChance, maxLife, isAlive);
 	}
 
@@ -27,5 +33,10 @@ public class Human extends Character {
 	@Override
 	public void death() {
 		System.out.println("Noooo!!! I have failed you!");
+	}
+
+	@Override
+	public void victory() {
+		System.out.println("Finally! I am victorious");
 	}
 }

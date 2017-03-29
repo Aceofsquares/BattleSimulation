@@ -21,6 +21,13 @@ public abstract class Character {
 	public abstract void exitBattle();
 	public abstract void criticalHit();
 	public abstract void death();
+	public abstract void victory();
+	
+	public Character(String name){
+		isAlive = true;
+		weapon = new Weapon();
+		this.name = name;
+	}
 	
 	public Character(String name, int maxLife){
 		//***Everything by default is 0, false, or null***//

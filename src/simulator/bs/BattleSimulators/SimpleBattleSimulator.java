@@ -7,6 +7,7 @@ public class SimpleBattleSimulator extends BattleSimulator {
 
 	@Override
 	protected void rules(Character attacker, Character defender) {
+		Dice.debugInfo = true;
 		if (attacker.getWeapon().getType() == WeaponType.PHYSICAL) {
 			physicalAttack(attacker, defender);
 		} else if (attacker.getWeapon().getType() == WeaponType.MAGIC) {

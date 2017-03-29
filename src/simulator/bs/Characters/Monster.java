@@ -1,11 +1,17 @@
 package simulator.bs.Characters;
 
 public class Monster extends Character {
+
+	public Monster(String name) {
+		super(name);
+	}
+
 	public Monster(String name, int maxLife) {
 		super(name, maxLife);
 	}
-	
-	public Monster(String name, int speed, int phyDef, int phyAtt, int magDef, int magAtt, int critChance, int maxLife, boolean isAlive){
+
+	public Monster(String name, int speed, int phyDef, int phyAtt, int magDef, int magAtt, int critChance, int maxLife,
+			boolean isAlive) {
 		super(name, speed, phyDef, phyAtt, magDef, magAtt, critChance, maxLife, isAlive);
 	}
 
@@ -27,5 +33,10 @@ public class Monster extends Character {
 	@Override
 	public void death() {
 		System.out.println("How cah dis bae!!!!");
+	}
+
+	@Override
+	public void victory() {
+		System.out.println("I wil et ju!");
 	}
 }
