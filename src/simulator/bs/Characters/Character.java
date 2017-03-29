@@ -14,31 +14,36 @@ public abstract class Character {
 	protected int maxLife;
 	protected boolean isAlive;
 	protected Weapon weapon;
-	
-	//*****These will perform different things for different characters****//
-	//*****Must be implemented****//
+
+	// *****These will perform different things for different characters****//
+	// *****Must be implemented****//
 	public abstract void enterBattle();
+
 	public abstract void exitBattle();
+
 	public abstract void criticalHit();
+
 	public abstract void death();
+
 	public abstract void victory();
-	
-	public Character(String name){
+
+	public Character(String name) {
 		isAlive = true;
 		weapon = new Weapon();
 		this.name = name;
 	}
-	
-	public Character(String name, int maxLife){
-		//***Everything by default is 0, false, or null***//
+
+	public Character(String name, int maxLife) {
+		// ***Everything by default is 0, false, or null***//
 		isAlive = true;
 		life = maxLife;
 		weapon = new Weapon();
 		this.maxLife = maxLife;
 		this.name = name;
 	}
-	
-	public Character(String name, int speed, int phyDef, int phyAtt, int magDef, int magAtt, int critChance, int maxLife, boolean isAlive){
+
+	public Character(String name, int speed, int phyDef, int phyAtt, int magDef, int magAtt, int critChance,
+			int maxLife, boolean isAlive) {
 		weapon = new Weapon();
 		this.name = name;
 		this.speed = speed;
@@ -51,12 +56,12 @@ public abstract class Character {
 		this.life = maxLife;
 		this.isAlive = isAlive;
 	}
-	
-	public void takeDamage(int damage){
-		if(damage > 0){
+
+	public void takeDamage(int damage) {
+		if (damage > 0) {
 			life -= damage;
 			System.out.printf("%s took %d damage\n", name, damage);
-			if(life <= 0){
+			if (life <= 0) {
 				life = 0;
 				isAlive = false;
 			}
@@ -64,143 +69,137 @@ public abstract class Character {
 			System.out.printf("%s took no damage\n", name);
 		}
 	}
-	
-	public void heal(int healAmnt){
-		if((healAmnt + life) > maxLife){
+
+	public void heal(int healAmnt) {
+		if ((healAmnt + life) > maxLife) {
 			life = maxLife;
 		} else {
 			life += healAmnt;
 		}
 	}
-	
-	public void equipWeapon(Weapon weapon){
+
+	public void equipWeapon(Weapon weapon) {
 		this.weapon = weapon;
 	}
-	
+
 	public void phyAttack(Character attackedCharacter, boolean isCrit) {
 		double critModifier = isCrit ? 2.5 : 1;
-		
+
 		int otherAttDef = attackedCharacter.getPhyDef();
-		int damage = (int)((phyAtt * critModifier) + weapon.getAttack()) - otherAttDef;
+		int damage = (int) ((phyAtt * critModifier) + weapon.getAttack()) - otherAttDef;
 		attackedCharacter.takeDamage(damage);
 	}
-	
-	public void magAttack(Character attackedCharacter, boolean isCrit){
+
+	public void magAttack(Character attackedCharacter, boolean isCrit) {
 		double critModifier = isCrit ? 2.5 : 1;
-		
+
 		int otherMagDef = attackedCharacter.getMagicDef();
-		int damage = (int)((magAtt + weapon.getAttack()) * critModifier) - otherMagDef;
+		int damage = (int) ((magAtt + weapon.getAttack()) * critModifier) - otherMagDef;
 		attackedCharacter.takeDamage(damage);
 	}
-	
-	public void setSpeed(int spd){
+
+	public void setSpeed(int spd) {
 		speed = spd;
 	}
-	
-	public void setPhyDef(int pDef){
+
+	public void setPhyDef(int pDef) {
 		phyDef = pDef;
 	}
-	
-	public void setPhyAtt(int pAtt){
+
+	public void setPhyAtt(int pAtt) {
 		phyAtt = pAtt;
 	}
-	
-	public void setMagDef(int mDef){
+
+	public void setMagDef(int mDef) {
 		magDef = mDef;
 	}
 
-	public void setMagAtt(int mAtt){
+	public void setMagAtt(int mAtt) {
 		magAtt = mAtt;
 	}
-	
-	public void setCritChance(int critChnc){
+
+	public void setCritChance(int critChnc) {
 		critChance = critChnc;
 	}
-	
-	public void setLife(int lfe){
+
+	public void setLife(int lfe) {
 		life = lfe;
 	}
-	
-	public void setIsAlive(boolean alive){
+
+	public void setIsAlive(boolean alive) {
 		isAlive = alive;
 	}
-	
+
 	public int getSpeed() {
 		return speed;
 	}
+
 	public int getPhyDef() {
 		return phyDef;
 	}
+
 	public int getPhyAtt() {
 		return phyAtt;
 	}
-	public int getMagicDef(){
+
+	public int getMagicDef() {
 		return magDef;
 	}
-	public int getMagicAtt(){
+
+	public int getMagicAtt() {
 		return magAtt;
 	}
+
 	public int getCritChance() {
 		return critChance;
 	}
+
 	public int getLife() {
 		return life;
 	}
+
 	public boolean isAlive() {
 		return isAlive;
 	}
-	public String getName(){
+
+	public String getName() {
 		return name;
 	}
-	public Weapon getWeapon(){
+
+	public Weapon getWeapon() {
 		return weapon;
 	}
-	
-	public String toString(){
+
+	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("Name: ");
-		sb.append(name);
-		sb.append("\n");
-		
-		sb.append("Life: ");
-		sb.append(life);
-		sb.append("\n");
-		
-		sb.append("Phy Att: ");
-		sb.append(phyAtt);
-		sb.append("\n");
-		
-		sb.append("Phy Def: ");
-		sb.append(phyDef);
-		sb.append("\n");
-		
-		sb.append("Mag Def: ");
-		sb.append(magDef);
-		sb.append("\n");
-		
-		sb.append("Mag Att: ");
-		sb.append(magAtt);
-		sb.append("\n");
-		
-		sb.append("Speed: ");
-		sb.append(speed);
-		sb.append("\n");
-		
-		sb.append("Crit: ");
-		sb.append(critChance);
-		sb.append("\n");
-		
-		sb.append("Alive: ");
+		sb.append(String.format("%-20s%-10s%-10s%-10s%-10s%-10s%-10s%-10s%s\n", "Name", "Life", "Phy Att", "Phy Def",
+				"Mag Def", "Mag Att", "Speed", "Crit", "Alive"));
+		sb.append(String.format("%-20s", name));
+
+		sb.append(String.format("%-10s", "" + life));
+
+		sb.append(String.format("%-10s", "" + phyAtt));
+
+		sb.append(String.format("%-10s", "" + phyDef));
+
+		sb.append(String.format("%-10s", "" + magDef));
+
+		sb.append(String.format("%-10s", "" + magAtt));
+
+		sb.append(String.format("%-10s", "" + speed));
+
+		sb.append(String.format("%-10s", "" + critChance));
+
 		sb.append(isAlive);
-		sb.append("\n");
-		
+
+		sb.append("\n\n");
+
 		sb.append("----Weapon----");
 		sb.append("\n");
 		sb.append(weapon.toString());
-		sb.append("\n");
 		sb.append("--------------");
 		sb.append("\n");
-		
+
 		return sb.toString();
 	}
 }
