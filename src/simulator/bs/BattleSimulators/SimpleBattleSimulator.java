@@ -25,8 +25,8 @@ public class SimpleBattleSimulator extends BattleSimulator {
 				attackerHitCheck);
 		if (attackerHitCheck > defenderDefenseCheck) {
 			int critCheck = attacker.getCritChance() + attacker.getWeapon().getCritChance();
-			System.out.printf("Testing if crit. Must be <= %d\n", critCheck + attacker.getWeapon().getCritChance());
-			if (Dice.roll(100) <= attacker.getCritChance()) {
+			System.out.printf("Testing if crit. Must be <= %d\n", critCheck);
+			if (Dice.roll(100) <= critCheck) {
 				attacker.magAttack(defender, true);
 			}else {
 				attacker.magAttack(defender, false);
@@ -46,8 +46,8 @@ public class SimpleBattleSimulator extends BattleSimulator {
 				attackerHitCheck);
 		if (attackerHitCheck > defenderDefenseCheck) {
 			int critCheck = attacker.getCritChance() + attacker.getWeapon().getCritChance();
-			System.out.printf("Testing if crit. Must be <= %d\n", critCheck + attacker.getWeapon().getCritChance());
-			if (Dice.roll(100) <= attacker.getCritChance()) {
+			System.out.printf("Testing if crit. Must be <= %d\n", critCheck);
+			if (Dice.roll(100) <= critCheck) {
 				attacker.phyAttack(defender, true);
 			} else {
 				attacker.phyAttack(defender, false);
