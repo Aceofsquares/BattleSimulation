@@ -1,4 +1,4 @@
-package simulator.bs;
+package simulator.bs.Characters;
 
 public class Monster extends Character {
 	public Monster(String name, int maxLife) {

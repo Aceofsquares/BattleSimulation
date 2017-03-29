@@ -1,4 +1,6 @@
-package simulator.bs;
+package simulator.bs.Characters;
+
+import simulator.bs.Weapons.Weapon;
 
 public abstract class Character {
 	protected String name;
@@ -9,6 +11,7 @@ public abstract class Character {
 	protected int life;
 	protected int maxLife;
 	protected boolean isAlive;
+	protected Weapon weapon;
 	
 	//*****These will perform different things for different characters****//
 	//*****Must be implemented****//
@@ -21,12 +24,13 @@ public abstract class Character {
 		//***Everything by default is 0, false, or null***//
 		isAlive = true;
 		life = maxLife;
+		weapon = new Weapon();
 		this.maxLife = maxLife;
 		this.name = name;
-		System.out.println(this);
 	}
 	
 	public Character(String name, int speed, int phyDef, int phyAtt, int critChance, int maxLife, boolean isAlive){
+		weapon = new Weapon();
 		this.name = name;
 		this.speed = speed;
 		this.phyDef = phyDef;
@@ -35,7 +39,6 @@ public abstract class Character {
 		this.maxLife = maxLife;
 		this.life = maxLife;
 		this.isAlive = isAlive;
-		System.out.println(this);
 	}
 	
 	public void takeDamage(int damage){
@@ -58,11 +61,15 @@ public abstract class Character {
 		}
 	}
 	
+	public void equipWeapon(Weapon weapon){
+		this.weapon = weapon;
+	}
+	
 	public void phyAttack(Character attackedCharacter, boolean isCrit) {
 		double critModifier = isCrit ? 2.5 : 1;
 		
 		int otherDef = attackedCharacter.getPhyDef();
-		int damage = (int)(phyAtt * critModifier) - otherDef;
+		int damage = (int)((phyAtt * critModifier) + weapon.getAttack()) - otherDef;
 		attackedCharacter.takeDamage(damage);
 	}
 	
@@ -111,6 +118,10 @@ public abstract class Character {
 	public String getName(){
 		return name;
 	}
+	public Weapon getWeapon(){
+		return weapon;
+	}
+	
 	public String toString(){
 		StringBuilder sb = new StringBuilder();
 		sb.append("Name: ");
@@ -139,6 +150,13 @@ public abstract class Character {
 		
 		sb.append("Alive: ");
 		sb.append(isAlive);
+		sb.append("\n");
+		
+		sb.append("----Weapon----");
+		sb.append("\n");
+		sb.append(weapon.toString());
+		sb.append("\n");
+		sb.append("--------------");
 		sb.append("\n");
 		
 		return sb.toString();
