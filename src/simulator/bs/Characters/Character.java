@@ -50,6 +50,7 @@ public abstract class Character {
 			life -= damage;
 			System.out.printf("%s took %d damage\n", name, damage);
 			if(life <= 0){
+				life = 0;
 				isAlive = false;
 			}
 		} else {
