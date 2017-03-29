@@ -34,12 +34,10 @@ public abstract class Weapon extends Item {
 	public String toString(){
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString());
-		sb.append("\n");
 		sb.append("Attack: ");
 		sb.append(attack);
-		sb.append("\n");
 		
-		sb.append("Type: ");
+		sb.append("\tType: ");
 		sb.append(weaponType == WeaponType.PHYSICAL ? "PHYSICAL" : "MAGIC");
 		sb.append("\n");
 		return sb.toString();
