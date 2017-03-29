@@ -8,6 +8,7 @@ import simulator.bs.Characters.Character;
 import simulator.bs.Characters.Human;
 import simulator.bs.Characters.Monster;
 import simulator.bs.Weapons.BroadSword;
+import simulator.bs.Weapons.DarkSpell;
 
 public class BattleSimulatorMain {
 	
@@ -17,14 +18,15 @@ public class BattleSimulatorMain {
 		input = new Scanner(System.in);
 		int round = 1;
 		int battle = 0;
-		//Name, Speed, phyDef, phyAtt, critChance, maxLife, isAlive
-		Human brian = new Human("Brian", 8, 17, 17, 4, 18, true);
+		//Name, Speed, phyDef, phyAtt, magDef, magAtt, critChance, maxLife, isAlive
+		Human brian = new Human("Brian", 8, 17, 2, 2, 17, 4, 18, true);
+		brian.equipWeapon(new BroadSword());
 		System.out.println(brian);
 		Monster banshee;
 		BattleSimulator battleSim = new SimpleBattleSimulator(); //Change to your Subclassed simulator.
 		while(brian.isAlive() && battle < 100){
-			banshee = new Monster("Banshee", 5, 10, 8, 55, 15, true);
-			banshee.equipWeapon(new BroadSword());
+			banshee = new Monster("Banshee", 5, 10, 8, 10, 10, 25, 15, true);
+			banshee.equipWeapon(new DarkSpell());
 			System.out.println(banshee);
 			battle += 1;
 			while(brian.isAlive() && banshee.isAlive()){

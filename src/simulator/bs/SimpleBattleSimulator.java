@@ -10,7 +10,28 @@ public class SimpleBattleSimulator extends BattleSimulator {
 		if (attacker.getWeapon().getType() == WeaponType.PHYSICAL) {
 			physicalAttack(attacker, defender);
 		} else if (attacker.getWeapon().getType() == WeaponType.MAGIC) {
-			// Create rules for magic attacks.
+			magicalAttack(attacker, defender);
+		}
+	}
+	
+	//Similar to physical attack only we do not include the speed of the defender in their defense check. :O
+	private void magicalAttack(Character attacker, Character defender){
+		System.out.printf("%s is rolling: ", attacker.getName());
+		int attackerHitCheck = Dice.roll(attacker.getMagicAtt()) + attacker.getSpeed();
+		System.out.printf("%s is rolling: ", defender.getName());
+		int defenderDefenseCheck = Dice.roll(attacker.getMagicDef());
+		System.out.printf("Testing if hit. Must beat %d\n", defenderDefenseCheck);
+		System.out.printf("The result is %d + %d = %d\n", attackerHitCheck - attacker.getSpeed(), attacker.getSpeed(),
+				attackerHitCheck);
+		if (attackerHitCheck > defenderDefenseCheck) {
+			int critCheck = attacker.getCritChance() + attacker.getWeapon().getCritChance();
+			System.out.printf("Testing if crit. Must be <= %d\n", critCheck + attacker.getWeapon().getCritChance());
+			if (Dice.roll(100) <= attacker.getCritChance()) {
+				attacker.magAttack(defender, true);
+			}
+			attacker.magAttack(defender, false);
+		} else {
+			System.out.printf("%s missed %s!\n", attacker.getName(), defender.getName());
 		}
 	}
 
@@ -23,8 +44,8 @@ public class SimpleBattleSimulator extends BattleSimulator {
 		System.out.printf("The result is %d + %d = %d\n", attackerHitCheck - attacker.getSpeed(), attacker.getSpeed(),
 				attackerHitCheck);
 		if (attackerHitCheck > defenderDefenseCheck) {
-			 System.out.printf("Testing if crit. Must be <= %d\n",
-			 attacker.getCritChance());
+			int critCheck = attacker.getCritChance() + attacker.getWeapon().getCritChance();
+			System.out.printf("Testing if crit. Must be <= %d\n", critCheck + attacker.getWeapon().getCritChance());
 			if (Dice.roll(100) <= attacker.getCritChance()) {
 				attacker.phyAttack(defender, true);
 			}

@@ -5,8 +5,8 @@ public class Human extends Character {
 		super(name, maxLife);
 	}
 	
-	public Human(String name, int speed, int phyDef, int phyAtt, int critChance, int maxLife, boolean isAlive){
-		super(name, speed, phyDef, phyAtt, critChance, maxLife, isAlive);
+	public Human(String name, int speed, int phyDef, int phyAtt, int magDef, int magAtt, int critChance, int maxLife, boolean isAlive){
+		super(name, speed, phyDef, phyAtt, magDef, magAtt, critChance, maxLife, isAlive);
 	}
 
 	@Override

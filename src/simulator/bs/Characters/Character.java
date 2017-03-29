@@ -7,6 +7,8 @@ public abstract class Character {
 	protected int speed;
 	protected int phyDef;
 	protected int phyAtt;
+	protected int magDef;
+	protected int magAtt;
 	protected int critChance;
 	protected int life;
 	protected int maxLife;
@@ -29,12 +31,14 @@ public abstract class Character {
 		this.name = name;
 	}
 	
-	public Character(String name, int speed, int phyDef, int phyAtt, int critChance, int maxLife, boolean isAlive){
+	public Character(String name, int speed, int phyDef, int phyAtt, int magDef, int magAtt, int critChance, int maxLife, boolean isAlive){
 		weapon = new Weapon();
 		this.name = name;
 		this.speed = speed;
 		this.phyDef = phyDef;
 		this.phyAtt = phyAtt;
+		this.magDef = magDef;
+		this.magAtt = magAtt;
 		this.critChance = critChance;
 		this.maxLife = maxLife;
 		this.life = maxLife;
@@ -68,8 +72,16 @@ public abstract class Character {
 	public void phyAttack(Character attackedCharacter, boolean isCrit) {
 		double critModifier = isCrit ? 2.5 : 1;
 		
-		int otherDef = attackedCharacter.getPhyDef();
-		int damage = (int)((phyAtt * critModifier) + weapon.getAttack()) - otherDef;
+		int otherAttDef = attackedCharacter.getPhyDef();
+		int damage = (int)((phyAtt * critModifier) + weapon.getAttack()) - otherAttDef;
+		attackedCharacter.takeDamage(damage);
+	}
+	
+	public void magAttack(Character attackedCharacter, boolean isCrit){
+		double critModifier = isCrit ? 2.5 : 1;
+		
+		int otherMagDef = attackedCharacter.getMagicDef();
+		int damage = (int)((magAtt + weapon.getAttack()) * critModifier) - otherMagDef;
 		attackedCharacter.takeDamage(damage);
 	}
 	
@@ -83,6 +95,14 @@ public abstract class Character {
 	
 	public void setPhyAtt(int pAtt){
 		phyAtt = pAtt;
+	}
+	
+	public void setMagDef(int mDef){
+		magDef = mDef;
+	}
+
+	public void setMagAtt(int mAtt){
+		magAtt = mAtt;
 	}
 	
 	public void setCritChance(int critChnc){
@@ -105,6 +125,12 @@ public abstract class Character {
 	}
 	public int getPhyAtt() {
 		return phyAtt;
+	}
+	public int getMagicDef(){
+		return magDef;
+	}
+	public int getMagicAtt(){
+		return magAtt;
 	}
 	public int getCritChance() {
 		return critChance;
@@ -138,6 +164,14 @@ public abstract class Character {
 		
 		sb.append("Phy Def: ");
 		sb.append(phyDef);
+		sb.append("\n");
+		
+		sb.append("Mag Def: ");
+		sb.append(magDef);
+		sb.append("\n");
+		
+		sb.append("Mag Att: ");
+		sb.append(magAtt);
 		sb.append("\n");
 		
 		sb.append("Speed: ");

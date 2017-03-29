@@ -5,14 +5,12 @@ public class Weapon {
 	protected WeaponType type;
 	protected int attack;
 	protected int weight;
+	protected int critChance;
 	
 	public Weapon(){
 		attack = 0;
 		type = WeaponType.PHYSICAL;
-	}
-	
-	public Weapon(int attack, int weight){
-		this.attack = attack;
+		critChance = 0;
 	}
 	
 	public int getAttack(){
@@ -41,6 +39,11 @@ public class Weapon {
 		sb.append(type == WeaponType.PHYSICAL ? "PHYSICAL" : "MAGIC");
 		sb.append("\n");
 		return sb.toString();
+	}
+
+	public int getCritChance() {
+		// TODO Auto-generated method stub
+		return critChance;
 	}
 
 }
