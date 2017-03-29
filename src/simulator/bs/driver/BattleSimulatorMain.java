@@ -2,8 +2,8 @@ package simulator.bs.driver;
 
 import java.util.Scanner;
 
-import simulator.bs.BattleSimulator;
-import simulator.bs.SimpleBattleSimulator;
+import simulator.bs.BattleSimulators.BattleSimulator;
+import simulator.bs.BattleSimulators.SimpleBattleSimulator;
 import simulator.bs.Characters.Character;
 import simulator.bs.Characters.Human;
 import simulator.bs.Characters.Monster;

@@ -1,4 +1,4 @@
-package simulator.bs;
+package simulator.bs.BattleSimulators;
 
 import simulator.bs.Characters.Character;
 

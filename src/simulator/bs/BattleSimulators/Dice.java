@@ -1,4 +1,4 @@
-package simulator.bs;
+package simulator.bs.BattleSimulators;
 
 import java.util.Random;
 
