@@ -7,7 +7,7 @@ public class BareHands extends Weapon{
 
 	public BareHands() {
 		super("BAREHANDS");
-		weaponType = WeaponType.PHYSICAL;
+		weaponType = WeaponType.PHYSICAL_MELEE;
 		attack = 1;
 		critChance = 1;
 		weight = 0;

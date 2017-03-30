@@ -8,6 +8,7 @@ public abstract class GameCharacter {
 	protected int speed;
 	protected int phyDef;
 	protected int phyAtt;
+	protected int dexterity;
 	protected int magDef;
 	protected int magAtt;
 	protected int critChance;
@@ -43,12 +44,13 @@ public abstract class GameCharacter {
 		this.name = name;
 	}
 
-	public GameCharacter(String name, int speed, int phyDef, int phyAtt, int magDef, int magAtt, int critChance, int maxLife, boolean isAlive) {
+	public GameCharacter(String name, int speed, int phyDef, int phyAtt, int dexterity, int magDef, int magAtt, int critChance, int maxLife, boolean isAlive) {
 		weapon = new BareHands();
 		this.name = name;
 		this.speed = speed;
 		this.phyDef = phyDef;
 		this.phyAtt = phyAtt;
+		this.dexterity = dexterity;
 		this.magDef = magDef;
 		this.magAtt = magAtt;
 		this.critChance = critChance;
@@ -107,6 +109,10 @@ public abstract class GameCharacter {
 	public void setPhyAtt(int pAtt) {
 		phyAtt = pAtt;
 	}
+	
+	public void setDexterity(int dexterity){
+		this.dexterity = dexterity;
+	}
 
 	public void setMagDef(int mDef) {
 		magDef = mDef;
@@ -139,6 +145,10 @@ public abstract class GameCharacter {
 	public int getPhyAtt() {
 		return phyAtt;
 	}
+	
+	public int getDexterity(){
+		return dexterity;
+	}
 
 	public int getMagicDef() {
 		return magDef;
@@ -170,11 +180,12 @@ public abstract class GameCharacter {
 
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(String.format("%-20s%-10s%-10s%-10s%-10s%-10s%-10s%-10s%s\n", "Name", "Life", "Phy Att", "Phy Def", "Mag Def", "Mag Att", "Speed", "Crit", "Alive"));
+		sb.append(String.format("%-20s%-10s%-10s%-10s%-10s%-10s%-10s%-10s%-10s%s\n", "Name", "Life", "Phy Att", "Phy Def", "Dexterity", "Mag Def", "Mag Att", "Speed", "Crit", "Alive"));
 		sb.append(String.format("%-20s", name));
 		sb.append(String.format("%-10s", "" + life));
 		sb.append(String.format("%-10s", "" + phyAtt));
 		sb.append(String.format("%-10s", "" + phyDef));
+		sb.append(String.format("%-10s", dexterity));
 		sb.append(String.format("%-10s", "" + magDef));
 		sb.append(String.format("%-10s", "" + magAtt));
 		sb.append(String.format("%-10s", "" + speed));

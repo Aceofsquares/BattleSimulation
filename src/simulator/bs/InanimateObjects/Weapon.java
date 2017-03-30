@@ -9,7 +9,7 @@ public abstract class Weapon extends Item {
 	public Weapon(String name){
 		super(name);
 		attack = 0;
-		weaponType = WeaponType.PHYSICAL;
+		weaponType = WeaponType.PHYSICAL_MELEE;
 		critChance = 0;
 	} 
 	public Weapon(String name, float weight, int cost, int attack, int critChance, WeaponType type){
@@ -38,7 +38,7 @@ public abstract class Weapon extends Item {
 		sb.append(attack);
 		
 		sb.append("\tType: ");
-		sb.append(weaponType == WeaponType.PHYSICAL ? "PHYSICAL" : "MAGIC");
+		sb.append(weaponType == WeaponType.PHYSICAL_MELEE ? "PHYSICAL" : "MAGIC");
 		sb.append("\n");
 		return sb.toString();
 	}

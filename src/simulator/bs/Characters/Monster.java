@@ -10,9 +10,9 @@ public class Monster extends GameCharacter {
 		super(name, maxLife);
 	}
 
-	public Monster(String name, int speed, int phyDef, int phyAtt, int magDef, int magAtt, int critChance, int maxLife,
+	public Monster(String name, int speed, int phyDef, int phyAtt, int dexterity, int magDef, int magAtt, int critChance, int maxLife,
 			boolean isAlive) {
-		super(name, speed, phyDef, phyAtt, magDef, magAtt, critChance, maxLife, isAlive);
+		super(name, speed, phyDef, phyAtt, dexterity, magDef, magAtt, critChance, maxLife, isAlive);
 	}
 
 	@Override

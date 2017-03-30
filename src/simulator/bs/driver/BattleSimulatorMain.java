@@ -66,6 +66,7 @@ public class BattleSimulatorMain {
 		ch.setMagDef(Dice.roll(25));
 		ch.setPhyAtt(Dice.roll(25));
 		ch.setPhyDef(Dice.roll(25));
+		ch.setDexterity(Dice.roll(25));
 		ch.setIsAlive(true);
 	}
 

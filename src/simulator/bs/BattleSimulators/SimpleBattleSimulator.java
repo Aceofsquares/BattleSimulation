@@ -8,9 +8,9 @@ public class SimpleBattleSimulator extends BattleSimulator {
 	@Override
 	protected void rules(GameCharacter attacker, GameCharacter defender) {
 		Dice.debugInfo = true;
-		if (attacker.getWeapon().getType() == WeaponType.PHYSICAL) {
+		if (attacker.getWeapon().getType() == WeaponType.PHYSICAL_MELEE) {
 			physicalAttack(attacker, defender);
-		} else if (attacker.getWeapon().getType() == WeaponType.MAGIC) {
+		} else if (attacker.getWeapon().getType() == WeaponType.MAGIC_MELEE) {
 			magicalAttack(attacker, defender);
 		}
 	}

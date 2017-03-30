@@ -6,7 +6,7 @@ import simulator.bs.InanimateObjects.WeaponType;
 public class DarkSpell extends Weapon {
 	public DarkSpell(){
 		super("Dark Spell");
-		weaponType = WeaponType.MAGIC;
+		weaponType = WeaponType.MAGIC_MELEE;
 		attack = 6;
 		critChance = 10;
 		cost = 15;

@@ -6,7 +6,7 @@ import simulator.bs.InanimateObjects.WeaponType;
 public class BroadSword extends Weapon {
 	public BroadSword() {
 		super("BroadSword");
-		weaponType = WeaponType.PHYSICAL;
+		weaponType = WeaponType.PHYSICAL_MELEE;
 		attack = 5;
 		critChance = 2;
 		cost = 3;
