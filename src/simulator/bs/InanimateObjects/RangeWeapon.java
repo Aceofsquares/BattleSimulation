@@ -7,8 +7,9 @@ public abstract class RangeWeapon extends Weapon {
 	public RangeWeapon(String name){
 		super(name);
 		attack = 0;
-		weaponType = WeaponType.PHYSICAL_MELEE;
+		weaponType = WeaponType.PHYSICAL_RANGE;
 		critChance = 0;
+		accuracy = 0;
 	} 
 	public RangeWeapon(String name, float weight, int cost, int attack, int critChance, int accuracy){
 		super(name, weight, cost, attack, critChance, WeaponType.PHYSICAL_RANGE);
