@@ -15,7 +15,6 @@ public class DarkSpell extends Weapon {
 
 	@Override
 	public String getDescription() {
-		// TODO Auto-generated method stub
 		return "Some prefer the light. Others, were born at night.";
 	}
 }
