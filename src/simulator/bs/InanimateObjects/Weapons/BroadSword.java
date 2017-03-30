@@ -1,12 +1,10 @@
 package simulator.bs.InanimateObjects.Weapons;
 
-import simulator.bs.InanimateObjects.Weapon;
-import simulator.bs.InanimateObjects.WeaponType;
+import simulator.bs.InanimateObjects.PhysicalMeleeWeapon;
 
-public class BroadSword extends Weapon {
+public class BroadSword extends PhysicalMeleeWeapon {
 	public BroadSword() {
 		super("BroadSword");
-		weaponType = WeaponType.PHYSICAL_MELEE;
 		attack = 5;
 		critChance = 2;
 		cost = 3;

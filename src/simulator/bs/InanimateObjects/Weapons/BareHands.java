@@ -1,18 +1,14 @@
 package simulator.bs.InanimateObjects.Weapons;
 
-import simulator.bs.InanimateObjects.Weapon;
-import simulator.bs.InanimateObjects.WeaponType;
+import simulator.bs.InanimateObjects.PhysicalMeleeWeapon;
 
-public class BareHands extends Weapon{
-
+public class BareHands extends PhysicalMeleeWeapon {
 	public BareHands() {
 		super("BAREHANDS");
-		weaponType = WeaponType.PHYSICAL_MELEE;
 		attack = 1;
 		critChance = 1;
 		weight = 0;
 		cost = 0;
-		
 	}
 
 	@Override
@@ -20,5 +16,4 @@ public class BareHands extends Weapon{
 		// TODO Auto-generated method stub
 		return "To some, these are for working.  Others, for killing";
 	}
-	
 }

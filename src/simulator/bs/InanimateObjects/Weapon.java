@@ -5,22 +5,30 @@ public abstract class Weapon extends Item {
 	protected WeaponType weaponType;
 	protected int attack;
 	protected int critChance;
+	protected RangeType range;
 	
-	public Weapon(String name){
+	public Weapon(String name, RangeType range, WeaponType weaponType){
 		super(name);
 		attack = 0;
-		weaponType = WeaponType.PHYSICAL_MELEE;
+		this.weaponType = weaponType;
 		critChance = 0;
+		this.range = range;
 	} 
-	public Weapon(String name, float weight, int cost, int attack, int critChance, WeaponType type){
+	
+	public Weapon(String name, float weight, int cost, int attack, int critChance, RangeType range, WeaponType weaponType){
 		super(name, weight, cost, ItemType.EQUIPPABLE);
 		this.critChance = critChance;
 		this.attack = attack;
-		this.weaponType = type;
+		this.weaponType = weaponType;
+		this.range = range;
 	}
 	
 	public int getAttack(){
 		return attack;
+	}
+	
+	public RangeType getRange(){
+		return range;
 	}
 	
 	public WeaponType getType(){
@@ -54,6 +62,10 @@ public abstract class Weapon extends Item {
 		sb.append("\t");
 		sb.append("Crit: ");
 		sb.append(critChance);
+		
+		sb.append("\t");
+		sb.append("Range: ");
+		sb.append(range);
 		sb.append("\n");
 		return sb.toString();
 	}

@@ -1,11 +1,12 @@
 package simulator.bs.InanimateObjects.Weapons;
 
-import simulator.bs.InanimateObjects.Weapon;
+import simulator.bs.InanimateObjects.RangeType;
+import simulator.bs.InanimateObjects.Spell;
 import simulator.bs.InanimateObjects.WeaponType;
 
-public class DarkSpell extends Weapon {
+public class DarkSpell extends Spell {
 	public DarkSpell(){
-		super("Dark Spell");
+		super("Dark Spell", RangeType.SHORT, WeaponType.MAGIC_MELEE);
 		weaponType = WeaponType.MAGIC_MELEE;
 		attack = 6;
 		critChance = 10;
