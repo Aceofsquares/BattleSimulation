@@ -1,6 +1,8 @@
-package simulator.bs.StatusEffects;
+package simulator.bs.StatusEffects.Debuffs;
 
 import simulator.bs.Characters.GameCharacter;
+import simulator.bs.StatusEffects.StatusEffect;
+import simulator.bs.StatusEffects.StatusEffectTime;
 
 public class PoisonEffect extends StatusEffect {
 	
