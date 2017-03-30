@@ -9,11 +9,13 @@ public abstract class GameCharacter {
 	protected int phyDef;
 	protected int phyAtt;
 	protected int dexterity;
+	protected int intelligence;
 	protected int magDef;
 	protected int magAtt;
 	protected int critChance;
 	protected int life;
 	protected int maxLife;
+	protected int level;
 	protected boolean isAlive;
 	protected Weapon weapon;
 
@@ -28,6 +30,8 @@ public abstract class GameCharacter {
 	public abstract void death();
 
 	public abstract void victory();
+	
+	public abstract void levelUp();
 
 	public GameCharacter(String name) {
 		isAlive = true;
@@ -40,17 +44,20 @@ public abstract class GameCharacter {
 		isAlive = true;
 		life = maxLife;
 		weapon = new BareHands();
+		level = 1;
 		this.maxLife = maxLife;
 		this.name = name;
 	}
 
-	public GameCharacter(String name, int speed, int phyDef, int phyAtt, int dexterity, int magDef, int magAtt, int critChance, int maxLife, boolean isAlive) {
+	public GameCharacter(String name, int speed, int phyDef, int phyAtt, int dexterity, int intelligence, int magDef, int magAtt, int critChance, int maxLife, boolean isAlive) {
 		weapon = new BareHands();
+		level = 1;
 		this.name = name;
 		this.speed = speed;
 		this.phyDef = phyDef;
 		this.phyAtt = phyAtt;
 		this.dexterity = dexterity;
+		this.intelligence = intelligence;
 		this.magDef = magDef;
 		this.magAtt = magAtt;
 		this.critChance = critChance;
@@ -133,6 +140,14 @@ public abstract class GameCharacter {
 	public void setIsAlive(boolean alive) {
 		isAlive = alive;
 	}
+	
+	public void setLevel(int level){
+		this.level = level;
+	}
+	
+	public void setIntelligence(int intelligence){
+		this.intelligence = intelligence;
+	}
 
 	public int getSpeed() {
 		return speed;
@@ -152,6 +167,14 @@ public abstract class GameCharacter {
 
 	public int getMagicDef() {
 		return magDef;
+	}
+	
+	public int getIntelligence(){
+		return intelligence;
+	}
+	
+	public int getLevel(){
+		return level;
 	}
 
 	public int getMagicAtt() {
@@ -180,12 +203,14 @@ public abstract class GameCharacter {
 
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(String.format("%-20s%-10s%-10s%-10s%-10s%-10s%-10s%-10s%-10s%s\n", "Name", "Life", "Phy Att", "Phy Def", "Dexterity", "Mag Def", "Mag Att", "Speed", "Crit", "Alive"));
+		sb.append(String.format("%-20s%-10s%-10s%-10s%-10s%-10s%-15s%-10s%-10s%-10s%-10s%s\n", "Name", "Level", "Life", "Phy Att", "Phy Def", "Dexterity", "Intelligence", "Mag Def", "Mag Att", "Speed", "Crit", "Alive"));
 		sb.append(String.format("%-20s", name));
+		sb.append(String.format("%-10s", "" + level));
 		sb.append(String.format("%-10s", "" + life));
 		sb.append(String.format("%-10s", "" + phyAtt));
 		sb.append(String.format("%-10s", "" + phyDef));
-		sb.append(String.format("%-10s", dexterity));
+		sb.append(String.format("%-10s", "" + dexterity));
+		sb.append(String.format("%-15s", "" + intelligence));
 		sb.append(String.format("%-10s", "" + magDef));
 		sb.append(String.format("%-10s", "" + magAtt));
 		sb.append(String.format("%-10s", "" + speed));

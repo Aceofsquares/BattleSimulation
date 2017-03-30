@@ -10,9 +10,9 @@ public class Human extends GameCharacter {
 		super(name, maxLife);
 	}
 
-	public Human(String name, int speed, int phyDef, int phyAtt, int dexterity, int magDef, int magAtt, int critChance, int maxLife,
+	public Human(String name, int speed, int phyDef, int phyAtt, int dexterity, int intelligence, int magDef, int magAtt, int critChance, int maxLife,
 			boolean isAlive) {
-		super(name, speed, phyDef, phyAtt, dexterity, magDef, magAtt, critChance, maxLife, isAlive);
+		super(name, speed, phyDef, phyAtt, dexterity, intelligence, magDef, magAtt, critChance, maxLife, isAlive);
 	}
 
 	@Override
@@ -38,5 +38,11 @@ public class Human extends GameCharacter {
 	@Override
 	public void victory() {
 		System.out.println("Finally! I am victorious");
+	}
+
+	@Override
+	public void levelUp() {
+		System.out.println("I must grow stronger!!");
+		
 	}
 }
