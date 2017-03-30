@@ -34,13 +34,14 @@ public abstract class GameCharacter {
 	public abstract void levelUp();
 
 	public GameCharacter(String name) {
+		level = 1;
 		isAlive = true;
 		weapon = new BareHands();
 		this.name = name;
 	}
 
 	public GameCharacter(String name, int maxLife) {
-		// ***Everything by default is 0, false, or null***//
+		// ***Everything is set to default***//
 		isAlive = true;
 		life = maxLife;
 		weapon = new BareHands();

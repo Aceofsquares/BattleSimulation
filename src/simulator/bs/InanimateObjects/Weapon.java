@@ -34,11 +34,26 @@ public abstract class Weapon extends Item {
 	public String toString(){
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString());
+		if(weaponType == WeaponType.PHYSICAL_MELEE){
+			sb.append(" (PHYSICAL MELEE)");
+		} else if(weaponType == WeaponType.PHYSICAL_RANGE){
+			sb.append(" (PHYSICAL RANGE)");
+		} else if(weaponType == WeaponType.MAGIC_MELEE){
+			sb.append(" (MAGIC MELEE)");
+		} else if(weaponType == WeaponType.MAGIC_RANGE){
+			sb.append(" (MAGIC RANGE)");
+		} else {
+			sb.append(" (UNKNOWN)");
+		}
+		
+		sb.append("\n");
+		
 		sb.append("Attack: ");
 		sb.append(attack);
 		
-		sb.append("\tType: ");
-		sb.append(weaponType == WeaponType.PHYSICAL_MELEE ? "PHYSICAL" : "MAGIC");
+		sb.append("\t");
+		sb.append("Crit: ");
+		sb.append(critChance);
 		sb.append("\n");
 		return sb.toString();
 	}

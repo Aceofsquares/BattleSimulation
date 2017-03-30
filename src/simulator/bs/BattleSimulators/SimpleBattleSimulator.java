@@ -22,7 +22,7 @@ public class SimpleBattleSimulator extends BattleSimulator {
 		System.out.printf("%s is rolling: ", defender.getName());
 		int defenderDefenseCheck = Dice.roll(defender.getMagicDef()) + defender.getIntelligence();
 		System.out.printf("Testing if hit. Must beat %d\n", defenderDefenseCheck);
-		System.out.printf("The result is %d + %d = %d\n", attackerHitCheck - attacker.getSpeed(), attacker.getSpeed(),
+		System.out.printf("The result is Attacker mA + int -> %d + %d = %d\n", attackerHitCheck - attacker.getIntelligence(), attacker.getIntelligence(),
 				attackerHitCheck);
 		if (attackerHitCheck > defenderDefenseCheck) {
 			int critCheck = attacker.getCritChance() + attacker.getWeapon().getCritChance();
@@ -43,7 +43,7 @@ public class SimpleBattleSimulator extends BattleSimulator {
 		System.out.printf("%s is rolling: ", defender.getName());
 		int defenderDefenseCheck = Dice.roll(defender.getPhyDef()) + defender.getSpeed();
 		System.out.printf("Testing if hit. Must beat %d\n", defenderDefenseCheck);
-		System.out.printf("The result is %d + %d = %d\n", attackerHitCheck - attacker.getSpeed(), attacker.getSpeed(),
+		System.out.printf("The result is Attacker pA + speed -> %d + %d = %d\n", attackerHitCheck - attacker.getSpeed(), attacker.getSpeed(),
 				attackerHitCheck);
 		if (attackerHitCheck > defenderDefenseCheck) {
 			int critCheck = attacker.getCritChance() + attacker.getWeapon().getCritChance();
