@@ -38,12 +38,7 @@ public class BattleSimulatorMain {
 				System.out.printf("\n--%s's turn!--\n", brian.getName());
 				battleSim.battle(brian, banshee);
 				printBattleInformation(banshee);
-				waitForEnter();
-				if (banshee.isAlive()) {
-					System.out.printf("\n--%s's turn!--\n", banshee.getName());
-					battleSim.battle(banshee, brian);
-					printBattleInformation(brian);
-				}
+				printBattleInformation(brian);
 				round += 1;
 			}
 

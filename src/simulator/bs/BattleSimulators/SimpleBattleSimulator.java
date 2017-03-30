@@ -18,9 +18,9 @@ public class SimpleBattleSimulator extends BattleSimulator {
 	//Similar to physical attack only we do not include the speed of the defender in their defense check. :O
 	private void magicalAttack(GameCharacter attacker, GameCharacter defender){
 		System.out.printf("%s is rolling: ", attacker.getName());
-		int attackerHitCheck = Dice.roll(attacker.getMagicAtt()) + attacker.getSpeed();
+		int attackerHitCheck = Dice.roll(attacker.getMagicAtt()) + attacker.getIntelligence();
 		System.out.printf("%s is rolling: ", defender.getName());
-		int defenderDefenseCheck = Dice.roll(attacker.getMagicDef());
+		int defenderDefenseCheck = Dice.roll(defender.getMagicDef()) + defender.getIntelligence();
 		System.out.printf("Testing if hit. Must beat %d\n", defenderDefenseCheck);
 		System.out.printf("The result is %d + %d = %d\n", attackerHitCheck - attacker.getSpeed(), attacker.getSpeed(),
 				attackerHitCheck);
@@ -41,7 +41,7 @@ public class SimpleBattleSimulator extends BattleSimulator {
 		System.out.printf("%s is rolling: ", attacker.getName());
 		int attackerHitCheck = Dice.roll(attacker.getPhyAtt()) + attacker.getSpeed();
 		System.out.printf("%s is rolling: ", defender.getName());
-		int defenderDefenseCheck = Dice.roll(attacker.getPhyDef()) + defender.getSpeed();
+		int defenderDefenseCheck = Dice.roll(defender.getPhyDef()) + defender.getSpeed();
 		System.out.printf("Testing if hit. Must beat %d\n", defenderDefenseCheck);
 		System.out.printf("The result is %d + %d = %d\n", attackerHitCheck - attacker.getSpeed(), attacker.getSpeed(),
 				attackerHitCheck);

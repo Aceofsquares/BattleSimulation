@@ -8,11 +8,20 @@ public abstract class BattleSimulator {
 
 	public void battle(GameCharacter attacker, GameCharacter defender) {
 		attacker.enterBattle();
+		defender.enterBattle();
 		rules(attacker, defender);
-		attacker.exitBattle();
 		if (!defender.isAlive()) {
 			attacker.victory();
 			defender.death();
+		} else {
+			rules(defender, attacker);
+			if(!attacker.isAlive()){
+				defender.victory();
+				attacker.death();
+			} else {
+				attacker.exitBattle();
+				defender.exitBattle();
+			}
 		}
 	}
 }
