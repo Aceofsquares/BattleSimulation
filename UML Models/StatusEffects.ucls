@@ -3,7 +3,7 @@
   generalizations="true" realizations="true" associations="true" dependencies="false" nesting-relationships="true" 
   router="FAN">  
   <class id="1" language="java" name="simulator.bs.StatusEffects.StatusEffect" project="Simulators" 
-    file="/Simulators/src/simulator/bs/StatusEffects/StatusEffect.java" binary="false" corner="BOTTOM_RIGHT">    
+    file="../src/simulator/bs/StatusEffects/StatusEffect.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="424" y="144"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -12,7 +12,7 @@
     </display>  
   </class>  
   <enumeration id="2" language="java" name="simulator.bs.StatusEffects.StatusEffectTime" project="Simulators" 
-    file="/Simulators/src/simulator/bs/StatusEffects/StatusEffectTime.java" binary="false" corner="BOTTOM_RIGHT">    
+    file="../src/simulator/bs/StatusEffects/StatusEffectTime.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="371" y="382"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -21,7 +21,7 @@
     </display>  
   </enumeration>  
   <class id="3" language="java" name="simulator.bs.StatusEffects.Debuffs.PoisonEffect" project="Simulators" 
-    file="/Simulators/src/simulator/bs/StatusEffects/Debuffs/PoisonEffect.java" binary="false" corner="BOTTOM_RIGHT">    
+    file="../src/simulator/bs/StatusEffects/Debuffs/PoisonEffect.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="615" y="346"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      

@@ -3,7 +3,7 @@
   generalizations="true" realizations="true" associations="true" dependencies="false" nesting-relationships="true" 
   router="FAN">  
   <class id="1" language="java" name="simulator.bs.InanimateObjects.PhysicalRangeWeapon" project="Simulators" 
-    file="/Simulators/src/simulator/bs/InanimateObjects/PhysicalRangeWeapon.java" binary="false" corner="BOTTOM_RIGHT">    
+    file="../src/simulator/bs/InanimateObjects/PhysicalRangeWeapon.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="897" y="673"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -12,7 +12,7 @@
     </display>  
   </class>  
   <enumeration id="2" language="java" name="simulator.bs.InanimateObjects.ItemType" project="Simulators" 
-    file="/Simulators/src/simulator/bs/InanimateObjects/ItemType.java" binary="false" corner="BOTTOM_RIGHT">    
+    file="../src/simulator/bs/InanimateObjects/ItemType.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="118" y="506"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -21,7 +21,7 @@
     </display>  
   </enumeration>  
   <class id="3" language="java" name="simulator.bs.InanimateObjects.Weapon" project="Simulators" 
-    file="/Simulators/src/simulator/bs/InanimateObjects/Weapon.java" binary="false" corner="BOTTOM_RIGHT">    
+    file="../src/simulator/bs/InanimateObjects/Weapon.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="487" y="499"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -30,7 +30,7 @@
     </display>  
   </class>  
   <class id="4" language="java" name="simulator.bs.InanimateObjects.Item" project="Simulators" 
-    file="/Simulators/src/simulator/bs/InanimateObjects/Item.java" binary="false" corner="BOTTOM_RIGHT">    
+    file="../src/simulator/bs/InanimateObjects/Item.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="137" y="161"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -39,7 +39,7 @@
     </display>  
   </class>  
   <enumeration id="5" language="java" name="simulator.bs.InanimateObjects.WeaponType" project="Simulators" 
-    file="/Simulators/src/simulator/bs/InanimateObjects/WeaponType.java" binary="false" corner="BOTTOM_RIGHT">    
+    file="../src/simulator/bs/InanimateObjects/WeaponType.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="138" y="698"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -48,7 +48,7 @@
     </display>  
   </enumeration>  
   <class id="6" language="java" name="simulator.bs.InanimateObjects.Weapons.DarkSpell" project="Simulators" 
-    file="/Simulators/src/simulator/bs/InanimateObjects/Weapons/DarkSpell.java" binary="false" corner="BOTTOM_RIGHT">    
+    file="../src/simulator/bs/InanimateObjects/Weapons/DarkSpell.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="414" y="69"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -57,7 +57,7 @@
     </display>  
   </class>  
   <class id="7" language="java" name="simulator.bs.InanimateObjects.Weapons.BroadSword" project="Simulators" 
-    file="/Simulators/src/simulator/bs/InanimateObjects/Weapons/BroadSword.java" binary="false" corner="BOTTOM_RIGHT">    
+    file="../src/simulator/bs/InanimateObjects/Weapons/BroadSword.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="689" y="72"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -66,7 +66,7 @@
     </display>  
   </class>  
   <class id="8" language="java" name="simulator.bs.InanimateObjects.Weapons.BareHands" project="Simulators" 
-    file="/Simulators/src/simulator/bs/InanimateObjects/Weapons/BareHands.java" binary="false" corner="BOTTOM_RIGHT">    
+    file="../src/simulator/bs/InanimateObjects/Weapons/BareHands.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="987" y="66"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -75,7 +75,7 @@
     </display>  
   </class>  
   <class id="9" language="java" name="simulator.bs.InanimateObjects.Spell" project="Simulators" 
-    file="/Simulators/src/simulator/bs/InanimateObjects/Spell.java" binary="false" corner="BOTTOM_RIGHT">    
+    file="../src/simulator/bs/InanimateObjects/Spell.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="463" y="232"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -84,7 +84,7 @@
     </display>  
   </class>  
   <class id="10" language="java" name="simulator.bs.InanimateObjects.PhysicalMeleeWeapon" project="Simulators" 
-    file="/Simulators/src/simulator/bs/InanimateObjects/PhysicalMeleeWeapon.java" binary="false" corner="BOTTOM_RIGHT">    
+    file="../src/simulator/bs/InanimateObjects/PhysicalMeleeWeapon.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="842" y="299"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -93,7 +93,7 @@
     </display>  
   </class>  
   <enumeration id="11" language="java" name="simulator.bs.InanimateObjects.RangeType" project="Simulators" 
-    file="/Simulators/src/simulator/bs/InanimateObjects/RangeType.java" binary="false" corner="BOTTOM_RIGHT">    
+    file="../src/simulator/bs/InanimateObjects/RangeType.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="398" y="769"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      

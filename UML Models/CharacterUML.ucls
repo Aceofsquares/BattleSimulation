@@ -3,7 +3,7 @@
   generalizations="true" realizations="true" associations="true" dependencies="false" nesting-relationships="true" 
   router="FAN">  
   <class id="1" language="java" name="simulator.bs.Characters.GameCharacter" project="Simulators" 
-    file="/Simulators/src/simulator/bs/Characters/GameCharacter.java" binary="false" corner="BOTTOM_RIGHT">    
+    file="../src/simulator/bs/Characters/GameCharacter.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="1017" width="305" x="117" y="-305"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -12,7 +12,7 @@
     </display>  
   </class>  
   <class id="2" language="java" name="simulator.bs.Characters.Monster" project="Simulators" 
-    file="/Simulators/src/simulator/bs/Characters/Monster.java" binary="false" corner="BOTTOM_RIGHT">    
+    file="../src/simulator/bs/Characters/Monster.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="225" width="268" x="-37" y="752"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -21,7 +21,7 @@
     </display>  
   </class>  
   <class id="3" language="java" name="simulator.bs.Characters.Human" project="Simulators" 
-    file="/Simulators/src/simulator/bs/Characters/Human.java" binary="false" corner="BOTTOM_RIGHT">    
+    file="../src/simulator/bs/Characters/Human.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="225" width="262" x="271" y="752"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
